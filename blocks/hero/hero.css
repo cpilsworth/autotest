@@ -18,24 +18,26 @@ main .hero-container > div {
 
 .hero .hero-media {
   width: 100%;
-  height: 100%;
   padding: 0;
   background: #000;
   overflow: hidden;
 }
 
+/*
+ * Height follows the image's intrinsic ratio (source: 1440x249 at 1440, 360x350 mobile).
+ * The source's height:100% chain only collapses to auto in standards mode; in quirks mode
+ * (doctype-less preview) it resolves to the viewport, so the chain is replaced by auto.
+ */
 .hero .img {
-  height: 100%;
   line-height: 0;
 }
 
 .hero .img picture {
   display: block;
-  height: 100%;
 }
 
 .hero .img img {
-  height: 100%;
+  height: auto;
   width: 100%;
   display: block;
   opacity: 0.75;

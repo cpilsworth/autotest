@@ -106,6 +106,12 @@
   /* chrome reservation: lang strip 29px + header row 57px (measured 1440 and 360) */
   --nav-height: 86px;
 
+  /* default-content rhythm (source AEM wrappers, measured on ri/copd at 375 and 1440):
+     prose gap = .text margin (10px, 16px from 768);
+     group gap = .text margin + container--tb-space-md padding bottom + top (10+20+20, 16+40+40) */
+  --prose-gap: 10px;
+  --prose-group-gap: 50px;
+
   /* motion (the only observed transition: search box .5s) */
   --duration-chrome: 0.5s;
 }
@@ -137,6 +143,8 @@
     --heading-line-height-xl: 50px;
     --heading-font-size-l: 36px;
     --heading-line-height-l: 40px;
+    --prose-gap: 16px;
+    --prose-group-gap: 96px;
   }
 }
 
@@ -514,8 +522,12 @@ main .section.spaced[data-section-status="loaded"] {
   display: block !important;
 }
 
-/* default-content prose (EW10: descendant selectors, no positional pseudo-classes) */
+/* default-content prose (EW10: descendant selectors, no positional pseudo-classes)
+   Spacing sits on the TOP of prose only: heading → text and text → text get the .text
+   margin (16px; 10px < 768), while a heading or paragraph that ends a wrapper adds nothing
+   before the next block (blocks own their spacing). */
 main .default-content-wrapper p {
+  margin-top: var(--prose-gap);
   font-family: var(--font-body);
   font-size: var(--body-font-size-m);
   line-height: var(--body-line-height-m);
@@ -523,9 +535,24 @@ main .default-content-wrapper p {
 
 main .default-content-wrapper ul,
 main .default-content-wrapper ol {
+  margin-top: var(--prose-gap);
   padding: 4px 0 10px 20px;
   list-style-position: outside;
   overflow-wrap: break-word;
+}
+
+/* inside a list item the list's own rhythm applies (source li > p sits flush) */
+main .default-content-wrapper li :is(p, ul, ol) {
+  margin-top: 0;
+}
+
+/* topic groups: the source wraps each heading + text run in its own container--tb-space-md,
+   so a heading that follows prose sits one group gap (96px; 50px < 768) below it.
+   Adjacent-sibling on purpose: a descendant `h3 { margin-top }` would also push the headings
+   that stand alone in front of a block (split-teaser, intro-media, cta-cards, video-poster
+   section heads), which those blocks already space themselves. */
+main .default-content-wrapper :is(p, ul, ol) + :is(h2, h3) {
+  margin-top: var(--prose-group-gap);
 }
 
 main .default-content-wrapper picture {
