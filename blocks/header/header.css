@@ -419,6 +419,12 @@ header .site-search-clear-text::before {
   font-size: 16px;
 }
 
+/* header.js toggles .hidden while the field is empty; the global .glyph display rule
+   comes after .hidden in styles.css and would otherwise keep the icon visible */
+header .site-search-clear-text.hidden {
+  display: none;
+}
+
 header .site-search.searchbox-enabled {
   right: -39px;
   max-width: inherit;
