@@ -16,6 +16,7 @@
  *   space             container--tb-space
  *   space-desktop-md  container--desktop-tb-space-md
  *   space-desktop     container--desktop-tb-space
+ *   title-core        teaser--title-color-core
  */
 function cleanText(el) {
   return el.textContent.replace(/\s+/g, ' ').trim();
@@ -134,6 +135,7 @@ export default function parse(element, { document }) {
   const variants = [];
   if (hasClass(element, 'teaser--text-image')) variants.push('text-image');
   if (hasClass(element, 'teaser--text-left')) variants.push('text-left');
+  if (hasClass(element, 'teaser--title-color-core')) variants.push('title-core');
   const spacing = spacingClass(element);
   if (spacing) variants.push(spacing);
 

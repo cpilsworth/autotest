@@ -19,6 +19,7 @@ Repeating rows — one row per item. Each item: desktop picture (+ optional mobi
 | Two columns | `cols-2` |
 | Flush section (no padding) | `flush` |
 | Section spacing medium | `space-md` |
+| Core-coloured card titles | `title-core` |
 
 ## Universal Editor fields
 

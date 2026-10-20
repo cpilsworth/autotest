@@ -137,6 +137,12 @@ main .section.cta-cards-container .default-content-wrapper h4 :is(sub, sup) {
   text-decoration: none;
 }
 
+/* variant title-core = teaser--title-color-core on the cards: titles (and title links) take
+   the core title colour; cards without the modifier keep the body colour */
+.cta-cards.title-core .card-title {
+  color: var(--text-color-title-1);
+}
+
 /* teaser.theme: a bold run inside the title keeps the title face (live `.cmp-teaser__title b`
    computes Lexia 700, not Inter-Bold — the diagnosis ">3 ans" / ">5 médecins" lines) */
 .cta-cards .card-title :is(b, strong) {

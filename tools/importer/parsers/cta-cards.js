@@ -15,6 +15,7 @@
  *   border           teaser--border-base
  *   plain            no card carries teaser--bgColor-supporting-1
  *   space-md / flush nearest container with a tb-space modifier: container--tb-space-md / none
+ *   title-core       every card carries teaser--title-color-core
  */
 /** Normalised text content. */
 function cleanText(el) {
@@ -148,6 +149,9 @@ export default function parse(element, { document }) {
   }
   if (teasers.length && !teasers.some((t) => hasClass(t, 'teaser--bgColor-supporting-1'))) {
     variants.push('plain');
+  }
+  if (teasers.length && teasers.every((t) => hasClass(t, 'teaser--title-color-core'))) {
+    variants.push('title-core');
   }
   const spacing = spacingClass(element);
   if (spacing) variants.push(spacing);
