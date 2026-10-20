@@ -522,6 +522,12 @@ main .section.spaced[data-section-status="loaded"] {
   display: block !important;
 }
 
+/* default-content titles: every source title component is title--color-title-1 (mulberry)
+   on every page; teaser/card titles stay body-coloured unless their block opts in */
+main .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--text-color-title-1);
+}
+
 /* default-content prose (EW10: descendant selectors, no positional pseudo-classes)
    Spacing sits on the TOP of prose only: heading → text and text → text get the .text
    margin (16px; 10px < 768), while a heading or paragraph that ends a wrapper adds nothing

@@ -54,6 +54,11 @@
   text-decoration: none;
 }
 
+/* variant title-core = teaser--title-color-core: the title takes the core title colour */
+.image-text-band.title-core .band-title {
+  color: var(--text-color-title-1);
+}
+
 /* the primary CTA sits at the bottom of the body column (.cmp-teaser__action-container) */
 .image-text-band .band-action {
   margin-top: auto;

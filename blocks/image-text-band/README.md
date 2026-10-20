@@ -17,6 +17,7 @@ Single block table. Content: teaser row: desktop picture (+ optional mobile pict
 | Desktop spacing medium | `space-desktop-md` |
 | Desktop spacing | `space-desktop` |
 | Spacing medium | `space-md` |
+| Core-coloured title | `title-core` |
 | Spacing | `space` |
 | Spacing before trailing text | `text-space` |
 

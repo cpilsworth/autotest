@@ -254,6 +254,9 @@ var CustomImportScript = (() => {
     if (teasers.length && !teasers.some((t) => hasClass(t, "teaser--bgColor-supporting-1"))) {
       variants.push("plain");
     }
+    if (teasers.length && teasers.every((t) => hasClass(t, "teaser--title-color-core"))) {
+      variants.push("title-core");
+    }
     const spacing = spacingClass(element);
     if (spacing) variants.push(spacing);
     const name = variants.length ? `cta-cards (${variants.join(", ")})` : "cta-cards";
@@ -367,6 +370,7 @@ var CustomImportScript = (() => {
     const variants = [];
     if (hasClass2(element, "teaser--text-image")) variants.push("text-image");
     if (hasClass2(element, "teaser--text-left")) variants.push("text-left");
+    if (hasClass2(element, "teaser--title-color-core")) variants.push("title-core");
     const spacing = spacingClass2(element);
     if (spacing) variants.push(spacing);
     const name = variants.length ? `image-text-band (${variants.join(", ")})` : "image-text-band";

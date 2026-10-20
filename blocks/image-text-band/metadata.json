@@ -46,6 +46,10 @@
     {
       "class": "text-space",
       "label": "Spacing before trailing text"
+    },
+    {
+      "class": "title-core",
+      "label": "Core-coloured title"
     }
   ],
   "memberVariantIds": [],

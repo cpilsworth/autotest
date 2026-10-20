@@ -44,6 +44,10 @@
     {
       "class": "space-md",
       "label": "Section spacing medium"
+    },
+    {
+      "class": "title-core",
+      "label": "Core-coloured card titles"
     }
   ],
   "memberVariantIds": [],
