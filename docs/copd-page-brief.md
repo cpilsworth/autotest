@@ -1,14 +1,22 @@
 # Page brief: COPD (BPCO) therapy-area page
 
-A spec for recreating the French COPD page of the myAstraZeneca Switzerland HCP portal on Edge Delivery Services, either by re-running the import or by authoring it by hand.
+What the French COPD page of the myAstraZeneca Switzerland HCP portal must contain, so it can be recreated on Edge Delivery Services. Layout, blocks, block options and section styles are defined by the page template; this brief covers content and checks only.
 
 | | |
 |---|---|
+| **Template** | [`docs/templates/copd-therapy-area-template.html`](templates/copd-therapy-area-template.html) (Document Authoring / Experience Workspace document) |
 | **Source** | https://www.myastrazeneca.ch/fr/startseite/therapiegebiete/ri/copd.html |
 | **EDS path** | `/fr/startseite/therapiegebiete/ri/copd` |
-| **Template** | `ri` (therapy-area pages, `/fr/startseite/therapiegebiete/ri/*`) |
 | **Audience** | Healthcare professionals in Switzerland; French; regulatory copy must stay verbatim |
-| **Job code** | `CH-12804 05/2026` (last line of the page) |
+| **Job code** | `CH-12804 05/2026` |
+
+## Using the template
+
+Start a new document from the template, then replace every `[bracketed placeholder]` with the content below, section by section. Keep the template's blocks, block options and `spaced` section styles as they are; the template already carries the design (see `DESIGN.md` and `styles/styles.css` for the design system itself).
+
+- **Repeat or drop rows** where the content needs it: cards, FAQ items, table rows and references are rows of their block.
+- **In-page nav:** each link's target is the id generated from its H2 text (lowercase, spaces become `-`, accents kept). When you replace "Section title 1" etc., update the matching link in the in-page nav block, using the targets listed below.
+- **Images:** the template reuses the COPD images, so it renders realistically. Replace them where the content differs and set real alt text.
 
 ## Metadata
 
@@ -18,79 +26,40 @@ A spec for recreating the French COPD page of the myAstraZeneca Switzerland HCP 
 | Description | En savoir plus sur la bronchopneumopathie chronique obstructive (BPCO) : ses causes, ses symptômes, les approches thérapeutiques actuelles et des informations cliniques importantes pour les proches et les professionnels de la santé. |
 | Image | none |
 
-## Page-wide design
+## Content by template section
 
-Uses the project's existing design system (`styles/styles.css`, `DESIGN.md`); nothing page-specific is needed globally.
+| # | Template section | COPD content |
+|---|---|---|
+| 1 | Breadcrumb | Home › Domaines thérapeutiques › R&I › Bronchopneumopathie chronique obstructive |
+| 2 | Hero | H1 "Bronchopneumopathie chronique obstructive"; images `copd-teaser-desktop.jpeg` / `copd-teaser.jpg` (alt "COPD - header") |
+| 3 | Social | as template |
+| 4 | In-page nav | Définition, Symptômes, Diagnostic, Traitement, Exacerbations, Recommandations, FAQ → the section 5, 7, 8, 10, 11, 12 and 13 H2s |
+| 5 | Overview + key figures | H2 "Aperçu de la bronchopneumopathie chronique obstructive" + intro. Cards: Incidence en Suisse (≈400 000 patients)¹ / Exacerbations (>70 % within 3 years)¹,³,⁴ / Mortalité (1 in 5 within a year of first hospitalisation)⁵ |
+| 6 | Topic text | H3 "Qu'est-ce que la BPCO ?" (definition, causes, third cause of death, list of 4 consequences, exacerbations, cardiovascular risk); H3 "Classification GOLD de la BPCO" (2 paragraphs) |
+| 7 | Symptoms | H2 "Symptômes de la BPCO" + intro. Band: "Quels sont les symptômes typiques de la BPCO ?" (3 paragraphs). Back-to-top link |
+| 8 | Diagnosis intro | H2 "Diagnostic de la BPCO et critères de dépistage". Band copy: "Le diagnostic de la BPCO repose sur…" |
+| 9 | Diagnosis details | H3 "Groupes à risque"; H3 "Confirmation du diagnostic par spirométrie" + table GOLD 1–4 (Stade GOLD / VEMS₁ / Degré d'obstruction), caption "Adapté d'après GOLD 2026, fig. 2.10"; H3 "Évaluation clinique initiale de la BPCO" + 7-item list + table A/B/E (Groupe / Charge symptomatique / Risque d'exacerbation), caption "fig. 2.13"; H3 "Guide de poche GOLD 2026" + download link; H3 "Guide de poche sur la BPCO" + download link. Back-to-top link |
+| 10 | Treatment | H2 "Traitement de la BPCO et options thérapeutiques en Suisse" + intro. Band: "Traitement de la BPCO : inhalateurs, rééducation et oxygénothérapie". H3s: médicamenteux; GOLD-ABE + table A/B/E (Initial / Intensification) + "Nouveauté dans GOLD 2026" and footnotes (* trithérapie not approved initially in Switzerland); inhalation + table DPI / pMDI / SMI / Nébuliseur (Conditions préalables / Limites); Oxygénothérapie; Rééducation pulmonaire; Traitement non pharmacologique (smoking cessation, vaccination list: Grippe, SARS-CoV-2, Pneumocoques, RSV/herpès zoster). Back-to-top link |
+| 11 | Exacerbations | H2 "Reconnaître et traiter les exacerbations de la BPCO" + intro. Band: "Reconnaissance d'une exacerbation aiguë de la BPCO (AECOPD)". Table Initial / Critères: légère, modérée, sévère (criteria lists). H3s: "Traitement aigu…" (5-item list), "BPCO : quand une hospitalisation est-elle indiquée ?" + flowchart `aecopd-exacerbation-management-flowchart-fr.png` (desktop version only) + link "Guide de poche sur la BPCO « Plan d'urgence », page 19", "Suivi et prévention" (4-item list, link to the fiche). Card: "Fiche d'information sur la BPCO" with DE / FR links |
+| 12 | Resources | H2 "Recommandations et ressources". Cards: Guide de poche sur la BPCO 2025 (Ligue pulmonaire PDF), Recommandations GOLD 2026, Guide de poche GOLD 2026 — each "Téléchargement PDF" |
+| 13 | FAQ | H2 "FAQ". 6 items: symptômes typiques; diagnostic selon le « COPD Pocketguide »; traitement groupe B; trithérapie; oxygénothérapie; rééducation pulmonaire |
+| 14 | References | #TRIXEO AEROSPHERE indication note with swissmedicinfo-pro.ch link; abbreviations (AECOPD … EVA); "Références :" + 16 references |
+| 15 | Campaign | H2 "Act on COPD"; copy "Découvrez l'impact réel des exacerbations…"; CTA "Découvrir maintenant" → https://www.actoncopd.ch/fr/index.html |
+| 16 | Product info | H2 "Informations utiles sur les produits"; teaser copy + "Découvrir maintenant" → `/fr/startseite/produkte.html#tabs-33184fd05f-item-72a3dc38cf-tab`. Back-to-top link; job code `CH-12804 05/2026` |
 
-- **Colours:** headings in default content and "core" teaser/card titles `--text-color-title-1` #830051 (mulberry); body text `--text-color-body-1` #3c4242; links hover `--text-color-interaction` #d0006f; tinted card ground `--bg-color-supporting-1` #ebefee.
-- **Type:** headings Lexia (`--font-display`; Roboto Slab substitute, Lexia is not rehosted); body Inter 16/24. Heading sizes h1 56 / h2 46 / h3 36 / h4 26px from 768px (36 / 36 / 26 / 26 below).
-- **Layout:** content capped at 1180px (`--container-max`), 16px gutter on mobile; breakpoint 768px.
-- **Prose rhythm:** 16px between heading/paragraph/list (10px mobile); 96px before a heading that follows text in the same section (50px mobile).
-- **Section style `spaced`:** 40px top/bottom (20px mobile). Applied server-side on publish, so it does not show in local preview.
-- **Header/footer:** shared site fragments (`/nav`, `/footer`), not part of this page.
+**In-page nav targets** (from the COPD H2s): `#aperçu-de-la-bronchopneumopathie-chronique-obstructive`, `#symptômes-de-la-bpco`, `#diagnostic-de-la-bpco-et-critères-de-dépistage`, `#traitement-de-la-bpco-et-options-thérapeutiques-en-suisse`, `#reconnaître-et-traiter-les-exacerbations-de-la-bpco`, `#recommandations-et-ressources`, `#faq`.
 
-## Section structure
-
-16 sections, in order. "Default" = default content (headings, paragraphs, lists, links) outside blocks.
-
-| # | Section | Style | Content |
-|---|---|---|---|
-| 1 | Breadcrumb | | `breadcrumb`: Home › Domaines thérapeutiques › R&I › Bronchopneumopathie chronique obstructive |
-| 2 | Hero | | `hero`: desktop image, mobile image, H1 "Bronchopneumopathie chronique obstructive" |
-| 3 | Social | | `social-features`: like / share / save row |
-| 4 | In-page nav | | `sub-nav-anchors`: Définition, Symptômes, Diagnostic, Traitement, Exacerbations, Recommandations, FAQ (links to the H2 ids below) |
-| 5 | Overview | | Default: H2 "Aperçu de la bronchopneumopathie chronique obstructive" + intro. `cta-cards (cols-3, center, title-core, space-md)`: 3 key-figure cards: Incidence en Suisse / Exacerbations / Mortalité |
-| 6 | What is COPD | | Default: H3 "Qu'est-ce que la BPCO ?" (paragraphs, list of consequences), H3 "Classification GOLD de la BPCO" |
-| 7 | Symptoms | spaced | Default: H2 "Symptômes de la BPCO" + intro. `image-text-band (text-image, text-left, title-core, space-desktop-md)`: "Quels sont les symptômes typiques de la BPCO ?". Back-to-top link |
-| 8 | Diagnosis intro | spaced | Default: H2 "Diagnostic de la BPCO et critères de dépistage". `image-text-band (text-left, space-desktop)`: image + intro copy, no title |
-| 9 | Diagnosis details | | Default: H3 "Groupes à risque", H3 "Confirmation du diagnostic par spirométrie". `table-bordered`: GOLD stages (3 cols × 4 rows). Caption, text. H3 "Évaluation clinique initiale de la BPCO" + list. `table-bordered`: GOLD A/B/E groups. Caption, text. H3 "Guide de poche GOLD 2026" + download link, H3 "Guide de poche sur la BPCO" + download link. Back-to-top link |
-| 10 | Treatment | spaced | Default: H2 "Traitement de la BPCO et options thérapeutiques en Suisse" + intro. `image-text-band (text-image, text-left, title-core, space-md)`: "Traitement de la BPCO : inhalateurs, rééducation et oxygénothérapie". H3s: médicamenteux, GOLD-ABE + `table-bordered` (A/B/E initial vs intensification) + footnotes, inhalation + `table-bordered` (DPI / pMDI / SMI / nébuliseur), Oxygénothérapie, Rééducation pulmonaire, Traitement non pharmacologique (vaccination list). Back-to-top link |
-| 11 | Exacerbations | | Default: H2 "Reconnaître et traiter les exacerbations de la BPCO" + intro. `image-text-band (title-core, space-md)`: "Reconnaissance d'une exacerbation aiguë de la BPCO (AECOPD)". `table-bordered`: légère / modérée / sévère criteria (2 cols, lists in cells). H3 "Traitement aigu…", H3 "BPCO : quand une hospitalisation est-elle indiquée ?", flowchart image (alt "Chart1") + source link, H3 "Suivi et prévention". `cta-cards (cols-3, border, center, space-md)`: single card "Fiche d'information sur la BPCO" with DE / FR links |
-| 12 | Resources | | Default: H2 "Recommandations et ressources". `cta-cards (cols-3, plain, title-core, space-md)`: 3 PDF cards: Guide de poche sur la BPCO 2025, Recommandations GOLD 2026, Guide de poche GOLD 2026 |
-| 13 | FAQ | | Default: H2 "FAQ". `accordion-faq`: 6 question/answer rows |
-| 14 | References | | `references`: indication footnote (#TRIXEO AEROSPHERE…), abbreviations, "Références :" + 16 numbered references |
-| 15 | Act on COPD | spaced | Default: H2 "Act on COPD". `image-text-band (space-md)`: image + copy + "Découvrir maintenant" → https://www.actoncopd.ch/fr/index.html |
-| 16 | Product info | | Default: H2 "Informations utiles sur les produits". `split-teaser`: copy + "Découvrir maintenant" → `/fr/startseite/produkte.html#…` + image. Back-to-top link, job code `CH-12804 05/2026` |
-
-## Blocks
-
-Authoring shapes (rows × cells). Options are added as block classes, e.g. `Cta Cards (cols-3, center)`.
-
-| Block | Status | Shape | Options used here |
-|---|---|---|---|
-| `breadcrumb` | existing | 1 cell: list of crumb links, current page as text | none |
-| `hero` | existing | rows: desktop picture, mobile picture, H1 | none |
-| `social-features` | existing | 1 cell: icon | none |
-| `sub-nav-anchors` | new | 1 cell: list of `#heading-id` links | none |
-| `cta-cards` | existing | 1 row per card: [desktop + mobile picture] [H4 title, copy, CTA] | `cols-3`, `center`, `border`, `plain`, `title-core`, `space-md` |
-| `image-text-band` | existing | 1 row: [desktop + mobile picture] [title, copy, CTA] | `text-image`, `text-left`, `title-core`, `space-md`, `space-desktop`, `space-desktop-md` |
-| `table-bordered` | new | first row = header; 1 row per table row | none (`no-header` available) |
-| `accordion-faq` | new | 1 row per item: [question] [answer] | none |
-| `references` | existing | rows: indication note, abbreviations, label + ordered list | none |
-| `split-teaser` | existing | 1 row: [copy + CTA] [picture] | none |
-
-`title-core` = mulberry title, used where the source teaser carries `teaser--title-color-core`. The "Fiche d'information" card deliberately has no `title-core` (grey title, as on the source).
-
-## Behaviour
-
-- **In-page nav:** links must target the auto-generated ids of the section H2s: `#aperçu-de-la-bronchopneumopathie-chronique-obstructive`, `#symptômes-de-la-bpco`, `#diagnostic-de-la-bpco-et-critères-de-dépistage`, `#traitement-de-la-bpco-et-options-thérapeutiques-en-suisse`, `#reconnaître-et-traiter-les-exacerbations-de-la-bpco`, `#recommandations-et-ressources`, `#faq`. Renaming a heading breaks its link. Scroll arrows appear only when the list overflows.
-- **FAQ:** native expand/collapse, all closed by default.
-- **Tables:** shrink to the screen on mobile; horizontal scroll only as a fallback.
-- **Back-to-top links** (`#top`) have no target, same as the source.
-
-## Assets
-
-Images are referenced from the source host (`https://www.myastrazeneca.ch/content/dam/intelligentcontent/portals/hcp/ch/de/home/therapiegebiete/r-and-i/chronisch-obstruktive-lungenerkrankung/…` and `/content/intelligentcontent/…/coreimg…` renditions). Most images have a desktop and a mobile version; keep both in blocks. For the flowchart (default content), keep only the desktop version: `aecopd-exacerbation-management-flowchart-fr.png`.
+**Images** come from the source host (`https://www.myastrazeneca.ch/content/…/chronisch-obstruktive-lungenerkrankung/…`); the imported page `content/fr/startseite/therapiegebiete/ri/copd.plain.html` has the full URLs.
 
 ## Regulatory checks
 
 - Job code `CH-12804 05/2026` present and last.
-- Indication footnote, abbreviations and all 16 references verbatim, with superscript reference numbers kept in the body text.
+- Indication note, abbreviations and all 16 references verbatim; superscript reference numbers kept in the body text.
 - External links unchanged (GOLD, Ligue pulmonaire, swissmedicinfo-pro.ch, actoncopd.ch).
 
-## Recreate by import
+## Recreate by import instead
 
-The import tooling in `tools/importer/` reproduces this page:
+The import tooling in `tools/importer/` rebuilds the page from the source in the same structure as the template:
 
 ```bash
 S=/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts
@@ -99,10 +68,4 @@ node $S/run-bulk-import.js --import-script tools/importer/import-ri.bundle.js \
   --urls tools/importer/urls-ri.txt --force
 ```
 
-The block mapping, section breaks and `spaced` styles are defined in `tools/importer/page-templates.json` (template `ri`). The cleanup transformer removes header/footer/cookie chrome, rewrites the in-page anchors to heading ids and drops the duplicate mobile flowchart. The importer's "content completeness" warning (~70%) is a known miscount caused by menu and footer text; against page content only the import scores 99.5%.
-
-## Known gaps vs the source
-
-- Section headings at 76–96px gaps on the source get 40px from `spaced` (Symptômes, Traitement, Act on COPD).
-- Captions ("Adapté d'après GOLD 2026…") render at body size instead of 12/20px.
-- The word "bronchopneumopathie" overflows a 375px screen slightly, as on the source.
+The importer's "content completeness" warning (~70%) is a known miscount caused by menu and footer text; against page content only the import scores 99.5%.
