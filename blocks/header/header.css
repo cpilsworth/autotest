@@ -527,13 +527,21 @@ header .site-search.searchbox-enabled {
     margin: 0;
     padding: 25px 32px 38px;
     background-color: var(--bg-color-supporting-1);
-    color: var(--text-color-title-1);
+    color: var(--text-color-body-1);
     overflow: auto;
   }
 
+  /* mega-menu links turn the interaction colour on hover (source .cmp-megamenu); needed
+     because `header nav a:any-link { color: inherit }` outranks the global a:hover */
+  header .main-nav-item-l0 > .main-nav-group a:any-link:hover {
+    color: var(--text-color-interaction);
+  }
+
+  /* level 3 is positioned against the mega-menu panel and starts at its top padding, so it
+     lines up with the first level-2 item whichever item is open (as on the source) */
   header .main-nav-item-l1 > .main-nav-group {
     position: absolute;
-    top: 0;
+    top: 25px;
     left: 252px;
     flex-direction: row;
   }
@@ -585,14 +593,22 @@ header .site-search.searchbox-enabled {
 }
 
 @media (width >= 1440px) {
+  /* same centring offset as the level-2 margin below, measured from the panel's padding box:
+     32px padding + (100% - 64px) / 2 - 650px + 252px; top = the panel's 32px top padding */
+  header .main-nav-item-l1 > .main-nav-group {
+    top: 32px;
+    left: calc(50% - 398px);
+  }
+
   header .main-nav-item.open.main-nav-item-l0 > .main-nav-group {
     padding: 32px 32px 38px;
     overflow: hidden;
   }
 
+  /* centre the level-2 list with a margin, not position: relative — a positioned item would
+     become level 3's containing block and pull it down to the open item's row */
   header .main-nav-group > .main-nav-item-l1 {
-    position: relative;
-    left: calc(50% - 650px);
+    margin-left: calc(50% - 650px);
   }
 
   header .main-nav-item-l1 > .open-col-3 {
