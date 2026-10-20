@@ -18,7 +18,8 @@ import myastrazenecaSectionsTransformer from './transformers/myastrazeneca-secti
 const PAGE_TEMPLATE = {
   "name": "ri",
   "urls": [
-    "https://www.myastrazeneca.ch/fr/startseite/therapiegebiete/ri/copd.html"
+    "https://www.myastrazeneca.ch/fr/startseite/therapiegebiete/ri/copd.html",
+    "https://www.myastrazeneca.ch/fr/startseite/therapiegebiete/ri/lupus.html"
   ],
   "representativeUrl": "https://www.myastrazeneca.ch/fr/startseite/therapiegebiete/ri/copd.html",
   "description": "Therapy-area (R&I) disease information pages: hero, in-page anchor nav, long-form clinical content with teasers, tables, cards, FAQ accordion and references",
@@ -105,8 +106,7 @@ const PAGE_TEMPLATE = {
       "id": "section-2",
       "name": "Hero",
       "selector": [
-        ".cmp-container#container-1995088c80",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(1)"
+        ".cmp-container#container-1995088c80"
       ],
       "style": null,
       "blocks": [
@@ -118,8 +118,7 @@ const PAGE_TEMPLATE = {
       "id": "section-3",
       "name": "Social features",
       "selector": [
-        ".container--tb-space:has(.socialFeatures)",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(2)"
+        ".container--tb-space:has(.socialFeatures)"
       ],
       "style": null,
       "blocks": [
@@ -131,8 +130,7 @@ const PAGE_TEMPLATE = {
       "id": "section-4",
       "name": "In-page navigation",
       "selector": [
-        ".container--customMenu",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(3)"
+        ".container--customMenu"
       ],
       "style": null,
       "blocks": [
@@ -144,8 +142,7 @@ const PAGE_TEMPLATE = {
       "id": "section-5",
       "name": "Overview (Définition)",
       "selector": [
-        "#definition",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(4)"
+        "#definition"
       ],
       "style": null,
       "blocks": [
@@ -160,8 +157,7 @@ const PAGE_TEMPLATE = {
       "id": "section-6",
       "name": "What is COPD / GOLD classification",
       "selector": [
-        ".cmp-container#container-d7f00d4c81",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(5)"
+        ".cmp-container#container-d7f00d4c81"
       ],
       "style": null,
       "blocks": [],
@@ -176,8 +172,7 @@ const PAGE_TEMPLATE = {
       "id": "section-7",
       "name": "Symptoms",
       "selector": [
-        "#symptome",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(7)"
+        "#symptome"
       ],
       "style": "spaced",
       "blocks": [
@@ -193,8 +188,7 @@ const PAGE_TEMPLATE = {
       "id": "section-8",
       "name": "Diagnosis intro",
       "selector": [
-        "#diagnose",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(10)"
+        "#diagnose"
       ],
       "style": "spaced",
       "blocks": [
@@ -208,8 +202,7 @@ const PAGE_TEMPLATE = {
       "id": "section-9",
       "name": "Diagnosis details",
       "selector": [
-        ".cmp-container#container-c1991dc3ba",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(11)"
+        ".cmp-container#container-c1991dc3ba"
       ],
       "style": null,
       "blocks": [
@@ -226,8 +219,7 @@ const PAGE_TEMPLATE = {
       "id": "section-10",
       "name": "Treatment",
       "selector": [
-        "#behandlung",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(17)"
+        "#behandlung"
       ],
       "style": "spaced",
       "blocks": [
@@ -244,8 +236,7 @@ const PAGE_TEMPLATE = {
       "id": "section-11",
       "name": "Exacerbations",
       "selector": [
-        "#exazerbationen",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(26)"
+        "#exazerbationen"
       ],
       "style": null,
       "blocks": [
@@ -263,8 +254,7 @@ const PAGE_TEMPLATE = {
       "id": "section-12",
       "name": "Recommendations and resources",
       "selector": [
-        "#leitllinien",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(31)"
+        "#leitllinien"
       ],
       "style": null,
       "blocks": [
@@ -278,8 +268,7 @@ const PAGE_TEMPLATE = {
       "id": "section-13",
       "name": "FAQ",
       "selector": [
-        "#faq",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(32)"
+        "#faq"
       ],
       "style": null,
       "blocks": [
@@ -293,8 +282,7 @@ const PAGE_TEMPLATE = {
       "id": "section-14",
       "name": "Footnotes and references",
       "selector": [
-        ".cmp-container#container-1326d877ee",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(34)"
+        ".cmp-container#container-1326d877ee"
       ],
       "style": null,
       "blocks": [
@@ -306,8 +294,7 @@ const PAGE_TEMPLATE = {
       "id": "section-15",
       "name": "Act on COPD",
       "selector": [
-        ".cmp-container#container-673310ea9a",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(35)"
+        ".cmp-container#container-673310ea9a"
       ],
       "style": "spaced",
       "blocks": [
@@ -321,8 +308,7 @@ const PAGE_TEMPLATE = {
       "id": "section-16",
       "name": "Useful product information",
       "selector": [
-        ".cmp-container#container-a09482dee2",
-        "#restyle > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid > div:nth-child(36)"
+        ".cmp-container#container-a09482dee2"
       ],
       "style": null,
       "blocks": [
@@ -331,6 +317,108 @@ const PAGE_TEMPLATE = {
       "defaultContent": [
         ".cmp-container#container-a09482dee2 > .title",
         ".cmp-container#container-225993e4e9 .text--right",
+        "#last-vivo-id .text"
+      ]
+    },
+    {
+      "id": "lupus-2",
+      "name": "Lupus: Hero",
+      "selector": [
+        ".cmp-container#container-612d5fc905"
+      ],
+      "style": null,
+      "blocks": [
+        "hero"
+      ],
+      "defaultContent": []
+    },
+    {
+      "id": "lupus-3",
+      "name": "Lupus: Intro",
+      "selector": [
+        ".cmp-container#container-c922591d97"
+      ],
+      "style": null,
+      "blocks": [
+        "social-features"
+      ],
+      "defaultContent": [
+        ".cmp-container#container-c922591d97 > .title",
+        ".cmp-container#container-c922591d97 > .text"
+      ]
+    },
+    {
+      "id": "lupus-4",
+      "name": "Lupus: Key figures",
+      "selector": [
+        "div.container:has(> .cmp-container#container-a06da34d86)"
+      ],
+      "style": null,
+      "blocks": [
+        "cta-cards"
+      ],
+      "defaultContent": []
+    },
+    {
+      "id": "lupus-5",
+      "name": "Lupus: Symptoms",
+      "selector": [
+        ".cmp-container#container-dec109ea2a"
+      ],
+      "style": null,
+      "blocks": [
+        "image-text-band"
+      ],
+      "defaultContent": []
+    },
+    {
+      "id": "lupus-6",
+      "name": "Lupus: Diagnosis",
+      "selector": [
+        ".cmp-container#container-e9ef234a3f"
+      ],
+      "style": null,
+      "blocks": [
+        "image-text-band"
+      ],
+      "defaultContent": []
+    },
+    {
+      "id": "lupus-7",
+      "name": "Lupus: Treatment",
+      "selector": [
+        ".cmp-container#container-53d3a52e89"
+      ],
+      "style": null,
+      "blocks": [
+        "image-text-band"
+      ],
+      "defaultContent": []
+    },
+    {
+      "id": "lupus-8",
+      "name": "Lupus: Abbreviations and references",
+      "selector": [
+        ".cmp-container#container-949db07bcf"
+      ],
+      "style": null,
+      "blocks": [
+        "references"
+      ],
+      "defaultContent": []
+    },
+    {
+      "id": "lupus-9",
+      "name": "Lupus: Useful product information",
+      "selector": [
+        ".cmp-container#container-c8b2f68deb"
+      ],
+      "style": null,
+      "blocks": [
+        "split-teaser"
+      ],
+      "defaultContent": [
+        ".cmp-container#container-c8b2f68deb > .title",
         "#last-vivo-id .text"
       ]
     }
